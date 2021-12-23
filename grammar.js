@@ -6,6 +6,8 @@ module.exports = grammar({
   extras: ($) => [],
 
   rules: {
-    source: ($) => "hello",
+    source: ($) => repeat($._line),
+
+    _line: ($) => choice(),
   },
 });
