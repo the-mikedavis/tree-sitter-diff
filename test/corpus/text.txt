@@ -1,0 +1,43 @@
+================================================================================
+Single-file small change
+================================================================================
+diff --git a/grammar.js b/grammar.js
+index dc36969..f37fde0 100644
+--- a/grammar.js
++++ b/grammar.js
+@@ -6,6 +6,8 @@ module.exports = grammar({
+   extras: ($) => [],
+ 
+   rules: {
+-    source: ($) => "hello",
++    source: ($) => repeat($._line),
++
++    _line: ($) => choice(),
+   },
+ });
+
+--------------------------------------------------------------------------------
+
+(source
+  (command
+    (filename))
+  (index
+    (commit)
+    (commit)
+    (mode))
+  (file
+    (filename))
+  (file
+    (filename))
+  (location
+    (linerange)
+    (linerange))
+  (context)
+  (context)
+  (context)
+  (deletion)
+  (addition)
+  (addition)
+  (addition)
+  (context)
+  (context))
