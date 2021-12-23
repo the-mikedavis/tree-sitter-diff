@@ -63,10 +63,6 @@ static bool ts_lex(TSLexer *lexer, TSStateId state) {
     case 0:
       if (eof) ADVANCE(5);
       if (lookahead == 'h') ADVANCE(1);
-      if (lookahead == '\t' ||
-          lookahead == '\n' ||
-          lookahead == '\r' ||
-          lookahead == ' ') SKIP(0)
       END_STATE();
     case 1:
       if (lookahead == 'e') ADVANCE(3);
