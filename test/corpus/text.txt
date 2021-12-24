@@ -108,3 +108,35 @@ Location with no context
   (location
     (linerange)
     (linerange)))
+
+================================================================================
+No newline at end of file
+================================================================================
+diff --git a/tmp.txt b/tmp.txt
+new file mode 100644
+index 00000000..ee9808dc
+--- /dev/null
++++ b/tmp.txt
+@@ -0,0 +1 @@
++aaa
+\ No newline at end of file
+
+--------------------------------------------------------------------------------
+
+(source
+  (command
+    (filename))
+  (file_change
+    (mode))
+  (index
+    (commit)
+    (commit))
+  (file
+    (filename))
+  (file
+    (filename))
+  (location
+    (linerange)
+    (linerange))
+  (addition)
+  (context))
