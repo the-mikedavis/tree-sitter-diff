@@ -17,7 +17,8 @@ module.exports = grammar({
         $.binary_change,
         $.index,
         $.similarity,
-        $.file,
+        $.old_file,
+        $.new_file,
         $.location,
         $.addition,
         $.deletion,
@@ -42,7 +43,8 @@ module.exports = grammar({
 
     similarity: ($) => iseq("similarity", "index", field("score", /\d+/), "%"),
 
-    file: ($) => iseq(field("kind", /[-\+]{3}/), $.filename),
+    old_file: ($) => iseq("---", $.filename),
+    new_file: ($) => iseq("+++", $.filename),
 
     location: ($) =>
       iseq("@@", $.linerange, $.linerange, "@@", optional(ANYTHING)),

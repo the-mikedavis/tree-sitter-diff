@@ -40,21 +40,6 @@
     "fields": {}
   },
   {
-    "type": "file",
-    "named": true,
-    "fields": {},
-    "children": {
-      "multiple": false,
-      "required": true,
-      "types": [
-        {
-          "type": "filename",
-          "named": true
-        }
-      ]
-    }
-  },
-  {
     "type": "file_change",
     "named": true,
     "fields": {},
@@ -118,6 +103,36 @@
     "fields": {}
   },
   {
+    "type": "new_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "filename",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "old_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "filename",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "similarity",
     "named": true,
     "fields": {}
@@ -151,10 +166,6 @@
           "named": true
         },
         {
-          "type": "file",
-          "named": true
-        },
-        {
           "type": "file_change",
           "named": true
         },
@@ -164,6 +175,14 @@
         },
         {
           "type": "location",
+          "named": true
+        },
+        {
+          "type": "new_file",
+          "named": true
+        },
+        {
+          "type": "old_file",
           "named": true
         },
         {
@@ -182,7 +201,15 @@
     "named": false
   },
   {
+    "type": "+++",
+    "named": false
+  },
+  {
     "type": "-",
+    "named": false
+  },
+  {
+    "type": "---",
     "named": false
   },
   {

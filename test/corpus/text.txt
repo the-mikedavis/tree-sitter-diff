@@ -25,9 +25,9 @@ index dc36969..f37fde0 100644
     (commit)
     (commit)
     (mode))
-  (file
+  (old_file
     (filename))
-  (file
+  (new_file
     (filename))
   (location
     (linerange)
@@ -131,9 +131,9 @@ index 00000000..ee9808dc
   (index
     (commit)
     (commit))
-  (file
+  (old_file
     (filename))
-  (file
+  (new_file
     (filename))
   (location
     (linerange)
@@ -149,5 +149,5 @@ Just a file declaration
 --------------------------------------------------------------------------------
 
 (source
-  (file
+  (old_file
     (filename)))

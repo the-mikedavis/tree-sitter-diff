@@ -42,7 +42,11 @@
         },
         {
           "type": "SYMBOL",
-          "name": "file"
+          "name": "old_file"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "new_file"
         },
         {
           "type": "SYMBOL",
@@ -251,18 +255,30 @@
         }
       ]
     },
-    "file": {
+    "old_file": {
       "type": "SEQ",
       "members": [
         {
           "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "FIELD",
-            "name": "kind",
-            "content": {
-              "type": "PATTERN",
-              "value": "[-\\+]{3}"
-            }
+            "type": "STRING",
+            "value": "---"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "filename"
+        }
+      ]
+    },
+    "new_file": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "STRING",
+            "value": "+++"
           }
         },
         {
