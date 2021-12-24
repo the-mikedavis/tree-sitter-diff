@@ -26,6 +26,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "file_change"
+        },
+        {
+          "type": "SYMBOL",
           "name": "index"
         },
         {
@@ -54,10 +58,10 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "PREC",
-          "value": 30,
+          "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "IMMEDIATE_TOKEN",
+            "type": "PREC",
+            "value": 50,
             "content": {
               "type": "STRING",
               "value": "diff"
@@ -74,14 +78,55 @@
         }
       ]
     },
+    "file_change": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "PREC",
+            "value": 47,
+            "content": {
+              "type": "FIELD",
+              "name": "kind",
+              "content": {
+                "type": "CHOICE",
+                "members": [
+                  {
+                    "type": "STRING",
+                    "value": "new"
+                  },
+                  {
+                    "type": "STRING",
+                    "value": "deleted"
+                  }
+                ]
+              }
+            }
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "file"
+        },
+        {
+          "type": "STRING",
+          "value": "mode"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "mode"
+        }
+      ]
+    },
     "index": {
       "type": "SEQ",
       "members": [
         {
-          "type": "PREC",
-          "value": 25,
+          "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "IMMEDIATE_TOKEN",
+            "type": "PREC",
+            "value": 45,
             "content": {
               "type": "STRING",
               "value": "index"
@@ -101,8 +146,16 @@
           "name": "commit"
         },
         {
-          "type": "SYMBOL",
-          "name": "mode"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "mode"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -110,10 +163,10 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "PREC",
-          "value": 20,
+          "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "IMMEDIATE_TOKEN",
+            "type": "PREC",
+            "value": 40,
             "content": {
               "type": "FIELD",
               "name": "kind",
@@ -143,10 +196,10 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "PREC",
-          "value": 15,
+          "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "IMMEDIATE_TOKEN",
+            "type": "PREC",
+            "value": 35,
             "content": {
               "type": "STRING",
               "value": "@@"
@@ -175,10 +228,10 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "PREC",
-          "value": 10,
+          "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "IMMEDIATE_TOKEN",
+            "type": "PREC",
+            "value": 30,
             "content": {
               "type": "STRING",
               "value": "+"
@@ -203,10 +256,10 @@
       "type": "SEQ",
       "members": [
         {
-          "type": "PREC",
-          "value": 5,
+          "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "IMMEDIATE_TOKEN",
+            "type": "PREC",
+            "value": 25,
             "content": {
               "type": "STRING",
               "value": "-"
