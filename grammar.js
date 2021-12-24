@@ -14,6 +14,7 @@ module.exports = grammar({
       choice(
         $.command,
         $.file_change,
+        $.binary_change,
         $.index,
         $.similarity,
         $.file,
@@ -34,6 +35,8 @@ module.exports = grammar({
         )
       ),
 
+    binary_change: ($) =>
+      iseq("Binary", "files", $.filename, "and", $.filename, "differ"),
 
     index: ($) => iseq("index", $.commit, "..", $.commit, optional($.mode)),
 

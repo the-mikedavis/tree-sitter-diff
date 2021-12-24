@@ -1,0 +1,19 @@
+================================================================================
+Single-file small change
+================================================================================
+diff --git a/tree-sitter-gitdiff.wasm b/tree-sitter-gitdiff.wasm
+index 0e9e828..3e32290 100755
+Binary files a/tree-sitter-gitdiff.wasm and b/tree-sitter-gitdiff.wasm differ
+
+--------------------------------------------------------------------------------
+
+(source
+  (command
+    (filename))
+  (index
+    (commit)
+    (commit)
+    (mode))
+  (binary_change
+    (filename)
+    (filename)))
