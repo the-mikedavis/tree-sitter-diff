@@ -44,7 +44,7 @@ module.exports = grammar({
 
     file: ($) => iseq(field("kind", choice("---", "+++")), $.filename),
 
-    location: ($) => iseq("@@", $.linerange, $.linerange, "@@", ANYTHING),
+    location: ($) => iseq("@@", $.linerange, $.linerange, "@@", optional(ANYTHING)),
 
     addition: ($) => iseq("+", optional(ANYTHING)),
 
@@ -52,7 +52,7 @@ module.exports = grammar({
 
     context: ($) => token(prec(-1, ANYTHING)),
 
-    linerange: ($) => /[-\+]\d+,\d+/,
+    linerange: ($) => /[-\+]\d+(,\d+)?/,
     filename: ($) => repeat1(/\S+/),
     commit: ($) => /[a-f0-9]{7,40}/,
     mode: ($) => /\d+/,

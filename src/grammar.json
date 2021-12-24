@@ -303,8 +303,16 @@
           "value": "@@"
         },
         {
-          "type": "PATTERN",
-          "value": "[^\\r\\n]+"
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "[^\\r\\n]+"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },
@@ -369,7 +377,7 @@
     },
     "linerange": {
       "type": "PATTERN",
-      "value": "[-\\+]\\d+,\\d+"
+      "value": "[-\\+]\\d+(,\\d+)?"
     },
     "filename": {
       "type": "REPEAT1",
