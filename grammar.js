@@ -44,7 +44,8 @@ module.exports = grammar({
 
     file: ($) => iseq(field("kind", choice("---", "+++")), $.filename),
 
-    location: ($) => iseq("@@", $.linerange, $.linerange, "@@", optional(ANYTHING)),
+    location: ($) =>
+      iseq("@@", $.linerange, $.linerange, "@@", optional(ANYTHING)),
 
     addition: ($) => iseq("+", optional(ANYTHING)),
 
