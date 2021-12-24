@@ -6,6 +6,7 @@ const PREC = {
   COMMAND: 50,
   FILE_CHANGE: 47,
   INDEX: 45,
+  SIMILARITY: 43,
   FILE: 40,
   LOCATION: 35,
   ADDITION: 30,
@@ -14,9 +15,10 @@ const PREC = {
 
 const COMMAND_PRELUDE = token.immediate(prec(PREC.COMMAND, "diff"));
 const FILE_CHANGE_PRELUDE = token.immediate(
-  prec(PREC.FILE_CHANGE, field("kind", choice("new", "deleted")))
+  prec(PREC.FILE_CHANGE, field("kind", choice("new", "deleted", "rename")))
 );
 const INDEX_PRELUDE = token.immediate(prec(PREC.INDEX, "index"));
+const SIMILARITY_PRELUDE = token.immediate(prec(PREC.SIMILARITY, "similarity"));
 const FILE_PRELUDE = token.immediate(
   prec(PREC.FILE, field("kind", choice("---", "+++")))
 );
@@ -37,6 +39,7 @@ module.exports = grammar({
         $.command,
         $.file_change,
         $.index,
+        $.similarity,
         $.file,
         $.location,
         $.addition,
@@ -46,10 +49,16 @@ module.exports = grammar({
 
     command: ($) => seq(COMMAND_PRELUDE, "--git", $.filename),
 
-    file_change: ($) => seq(FILE_CHANGE_PRELUDE, "file", "mode", $.mode),
+    file_change: ($) =>
+      choice(
+        seq(FILE_CHANGE_PRELUDE, "file", "mode", $.mode),
+        seq(FILE_CHANGE_PRELUDE, choice("from", "to"), $.filename)
+      ),
 
     index: ($) =>
       seq(INDEX_PRELUDE, $.commit, "..", $.commit, optional($.mode)),
+
+    similarity: ($) => seq(SIMILARITY_PRELUDE, "index", field("score", /\d+%/)),
 
     file: ($) => seq(FILE_PRELUDE, $.filename),
 

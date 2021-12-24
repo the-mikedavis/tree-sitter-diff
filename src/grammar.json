@@ -34,6 +34,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "similarity"
+        },
+        {
+          "type": "SYMBOL",
           "name": "file"
         },
         {
@@ -79,43 +83,102 @@
       ]
     },
     "file_change": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "IMMEDIATE_TOKEN",
-          "content": {
-            "type": "PREC",
-            "value": 47,
-            "content": {
-              "type": "FIELD",
-              "name": "kind",
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "IMMEDIATE_TOKEN",
               "content": {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "STRING",
-                    "value": "new"
-                  },
-                  {
-                    "type": "STRING",
-                    "value": "deleted"
+                "type": "PREC",
+                "value": 47,
+                "content": {
+                  "type": "FIELD",
+                  "name": "kind",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "new"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "deleted"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "rename"
+                      }
+                    ]
                   }
-                ]
+                }
               }
+            },
+            {
+              "type": "STRING",
+              "value": "file"
+            },
+            {
+              "type": "STRING",
+              "value": "mode"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "mode"
             }
-          }
+          ]
         },
         {
-          "type": "STRING",
-          "value": "file"
-        },
-        {
-          "type": "STRING",
-          "value": "mode"
-        },
-        {
-          "type": "SYMBOL",
-          "name": "mode"
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "IMMEDIATE_TOKEN",
+              "content": {
+                "type": "PREC",
+                "value": 47,
+                "content": {
+                  "type": "FIELD",
+                  "name": "kind",
+                  "content": {
+                    "type": "CHOICE",
+                    "members": [
+                      {
+                        "type": "STRING",
+                        "value": "new"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "deleted"
+                      },
+                      {
+                        "type": "STRING",
+                        "value": "rename"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "from"
+                },
+                {
+                  "type": "STRING",
+                  "value": "to"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "filename"
+            }
+          ]
         }
       ]
     },
@@ -156,6 +219,34 @@
               "type": "BLANK"
             }
           ]
+        }
+      ]
+    },
+    "similarity": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "PREC",
+            "value": 43,
+            "content": {
+              "type": "STRING",
+              "value": "similarity"
+            }
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "index"
+        },
+        {
+          "type": "FIELD",
+          "name": "score",
+          "content": {
+            "type": "PATTERN",
+            "value": "\\d+%"
+          }
         }
       ]
     },

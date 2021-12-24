@@ -48,6 +48,10 @@
       "required": true,
       "types": [
         {
+          "type": "filename",
+          "named": true
+        },
+        {
           "type": "mode",
           "named": true
         }
@@ -94,6 +98,11 @@
     }
   },
   {
+    "type": "similarity",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "source",
     "named": true,
     "fields": {},
@@ -131,6 +140,10 @@
         },
         {
           "type": "location",
+          "named": true
+        },
+        {
+          "type": "similarity",
           "named": true
         }
       ]
@@ -173,6 +186,10 @@
     "named": false
   },
   {
+    "type": "from",
+    "named": false
+  },
+  {
     "type": "index",
     "named": false
   },
@@ -182,10 +199,18 @@
   },
   {
     "type": "mode",
-    "named": true
+    "named": false
   },
   {
     "type": "mode",
+    "named": true
+  },
+  {
+    "type": "similarity",
+    "named": false
+  },
+  {
+    "type": "to",
     "named": false
   }
 ]

@@ -52,9 +52,13 @@ index 0000000..e69de29
 --------------------------------------------------------------------------------
 
 (source
-  (command (filename))
-  (file_change (mode))
-  (index (commit) (commit)))
+  (command
+    (filename))
+  (file_change
+    (mode))
+  (index
+    (commit)
+    (commit)))
 
 ================================================================================
 Deleted empty file
@@ -66,6 +70,29 @@ index e69de29..0000000
 --------------------------------------------------------------------------------
 
 (source
-  (command (filename))
-  (file_change (mode))
-  (index (commit) (commit)))
+  (command
+    (filename))
+  (file_change
+    (mode))
+  (index
+    (commit)
+    (commit)))
+
+================================================================================
+File rename
+================================================================================
+diff --git a/tmp.txt b/tmp.md
+similarity index 100%
+rename from tmp.txt
+rename to tmp.md
+
+--------------------------------------------------------------------------------
+
+(source
+  (command
+    (filename))
+  (similarity)
+  (file_change
+    (filename))
+  (file_change
+    (filename)))
