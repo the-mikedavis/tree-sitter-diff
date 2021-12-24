@@ -2,29 +2,16 @@ const NEWLINE = /\r?\n/;
 const WHITE_SPACE = /[\t\f\v ]+/;
 const ANYTHING = /[^\r\n]+/;
 
-const PREC = {
-  COMMAND: 50,
-  FILE_CHANGE: 47,
-  INDEX: 45,
-  SIMILARITY: 43,
-  FILE: 40,
-  LOCATION: 35,
-  ADDITION: 30,
-  DELETION: 25,
-};
-
-const COMMAND_PRELUDE = token.immediate(prec(PREC.COMMAND, "diff"));
+const COMMAND_PRELUDE = token.immediate("diff");
 const FILE_CHANGE_PRELUDE = token.immediate(
-  prec(PREC.FILE_CHANGE, field("kind", choice("new", "deleted", "rename")))
+  field("kind", choice("new", "deleted", "rename"))
 );
-const INDEX_PRELUDE = token.immediate(prec(PREC.INDEX, "index"));
-const SIMILARITY_PRELUDE = token.immediate(prec(PREC.SIMILARITY, "similarity"));
-const FILE_PRELUDE = token.immediate(
-  prec(PREC.FILE, field("kind", choice("---", "+++")))
-);
-const LOCATION_PRELUDE = token.immediate(prec(PREC.LOCATION, "@@"));
-const ADDITION_PRELUDE = token.immediate(prec(PREC.ADDITION, "+"));
-const DELETION_PRELUDE = token.immediate(prec(PREC.DELETION, "-"));
+const INDEX_PRELUDE = token.immediate("index");
+const SIMILARITY_PRELUDE = token.immediate("similarity");
+const FILE_PRELUDE = token.immediate(field("kind", choice("---", "+++")));
+const LOCATION_PRELUDE = token.immediate("@@");
+const ADDITION_PRELUDE = token.immediate("+");
+const DELETION_PRELUDE = token.immediate("-");
 
 module.exports = grammar({
   name: "gitdiff",

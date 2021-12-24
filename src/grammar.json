@@ -64,12 +64,8 @@
         {
           "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "PREC",
-            "value": 50,
-            "content": {
-              "type": "STRING",
-              "value": "diff"
-            }
+            "type": "STRING",
+            "value": "diff"
           }
         },
         {
@@ -91,28 +87,24 @@
             {
               "type": "IMMEDIATE_TOKEN",
               "content": {
-                "type": "PREC",
-                "value": 47,
+                "type": "FIELD",
+                "name": "kind",
                 "content": {
-                  "type": "FIELD",
-                  "name": "kind",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": "new"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "deleted"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "rename"
-                      }
-                    ]
-                  }
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "new"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "deleted"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "rename"
+                    }
+                  ]
                 }
               }
             },
@@ -136,28 +128,24 @@
             {
               "type": "IMMEDIATE_TOKEN",
               "content": {
-                "type": "PREC",
-                "value": 47,
+                "type": "FIELD",
+                "name": "kind",
                 "content": {
-                  "type": "FIELD",
-                  "name": "kind",
-                  "content": {
-                    "type": "CHOICE",
-                    "members": [
-                      {
-                        "type": "STRING",
-                        "value": "new"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "deleted"
-                      },
-                      {
-                        "type": "STRING",
-                        "value": "rename"
-                      }
-                    ]
-                  }
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "new"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "deleted"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "rename"
+                    }
+                  ]
                 }
               }
             },
@@ -188,12 +176,8 @@
         {
           "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "PREC",
-            "value": 45,
-            "content": {
-              "type": "STRING",
-              "value": "index"
-            }
+            "type": "STRING",
+            "value": "index"
           }
         },
         {
@@ -228,12 +212,8 @@
         {
           "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "PREC",
-            "value": 43,
-            "content": {
-              "type": "STRING",
-              "value": "similarity"
-            }
+            "type": "STRING",
+            "value": "similarity"
           }
         },
         {
@@ -256,24 +236,20 @@
         {
           "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "PREC",
-            "value": 40,
+            "type": "FIELD",
+            "name": "kind",
             "content": {
-              "type": "FIELD",
-              "name": "kind",
-              "content": {
-                "type": "CHOICE",
-                "members": [
-                  {
-                    "type": "STRING",
-                    "value": "---"
-                  },
-                  {
-                    "type": "STRING",
-                    "value": "+++"
-                  }
-                ]
-              }
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "---"
+                },
+                {
+                  "type": "STRING",
+                  "value": "+++"
+                }
+              ]
             }
           }
         },
@@ -289,12 +265,8 @@
         {
           "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "PREC",
-            "value": 35,
-            "content": {
-              "type": "STRING",
-              "value": "@@"
-            }
+            "type": "STRING",
+            "value": "@@"
           }
         },
         {
@@ -321,12 +293,8 @@
         {
           "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "PREC",
-            "value": 30,
-            "content": {
-              "type": "STRING",
-              "value": "+"
-            }
+            "type": "STRING",
+            "value": "+"
           }
         },
         {
@@ -349,12 +317,8 @@
         {
           "type": "IMMEDIATE_TOKEN",
           "content": {
-            "type": "PREC",
-            "value": 25,
-            "content": {
-              "type": "STRING",
-              "value": "-"
-            }
+            "type": "STRING",
+            "value": "-"
           }
         },
         {
