@@ -42,7 +42,7 @@ module.exports = grammar({
 
     similarity: ($) => iseq("similarity", "index", field("score", /\d+/), "%"),
 
-    file: ($) => iseq(field("kind", choice("---", "+++")), $.filename),
+    file: ($) => iseq(field("kind", /[-\+]{3}/), $.filename),
 
     location: ($) =>
       iseq("@@", $.linerange, $.linerange, "@@", optional(ANYTHING)),
