@@ -5,6 +5,21 @@
     "fields": {}
   },
   {
+    "type": "binary_change",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "filename",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "command",
     "named": true,
     "fields": {},
@@ -120,6 +135,10 @@
           "named": true
         },
         {
+          "type": "binary_change",
+          "named": true
+        },
+        {
           "type": "command",
           "named": true
         },
@@ -179,6 +198,14 @@
     "named": false
   },
   {
+    "type": "Binary",
+    "named": false
+  },
+  {
+    "type": "and",
+    "named": false
+  },
+  {
     "type": "commit",
     "named": true
   },
@@ -191,7 +218,15 @@
     "named": false
   },
   {
+    "type": "differ",
+    "named": false
+  },
+  {
     "type": "file",
+    "named": false
+  },
+  {
+    "type": "files",
     "named": false
   },
   {

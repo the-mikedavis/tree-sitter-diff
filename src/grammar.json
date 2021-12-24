@@ -30,6 +30,10 @@
         },
         {
           "type": "SYMBOL",
+          "name": "binary_change"
+        },
+        {
+          "type": "SYMBOL",
           "name": "index"
         },
         {
@@ -79,94 +83,107 @@
       ]
     },
     "file_change": {
-      "type": "CHOICE",
+      "type": "SEQ",
       "members": [
         {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "IMMEDIATE_TOKEN",
-              "content": {
-                "type": "FIELD",
-                "name": "kind",
-                "content": {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": "new"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "deleted"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "rename"
-                    }
-                  ]
-                }
-              }
-            },
-            {
-              "type": "STRING",
-              "value": "file"
-            },
-            {
-              "type": "STRING",
-              "value": "mode"
-            },
-            {
-              "type": "SYMBOL",
-              "name": "mode"
-            }
-          ]
-        },
-        {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "IMMEDIATE_TOKEN",
-              "content": {
-                "type": "FIELD",
-                "name": "kind",
-                "content": {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": "new"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "deleted"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "rename"
-                    }
-                  ]
-                }
-              }
-            },
-            {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "FIELD",
+            "name": "kind",
+            "content": {
               "type": "CHOICE",
               "members": [
                 {
                   "type": "STRING",
-                  "value": "from"
+                  "value": "new"
                 },
                 {
                   "type": "STRING",
-                  "value": "to"
+                  "value": "deleted"
+                },
+                {
+                  "type": "STRING",
+                  "value": "rename"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "file"
+                },
+                {
+                  "type": "STRING",
+                  "value": "mode"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "mode"
                 }
               ]
             },
             {
-              "type": "SYMBOL",
-              "name": "filename"
+              "type": "SEQ",
+              "members": [
+                {
+                  "type": "CHOICE",
+                  "members": [
+                    {
+                      "type": "STRING",
+                      "value": "from"
+                    },
+                    {
+                      "type": "STRING",
+                      "value": "to"
+                    }
+                  ]
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "filename"
+                }
+              ]
             }
           ]
+        }
+      ]
+    },
+    "binary_change": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "STRING",
+            "value": "Binary"
+          }
+        },
+        {
+          "type": "STRING",
+          "value": "files"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "filename"
+        },
+        {
+          "type": "STRING",
+          "value": "and"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "filename"
+        },
+        {
+          "type": "STRING",
+          "value": "differ"
         }
       ]
     },
@@ -355,8 +372,11 @@
       "value": "[-\\+]\\d+,\\d+"
     },
     "filename": {
-      "type": "PATTERN",
-      "value": "[^\\r\\n]+"
+      "type": "REPEAT1",
+      "content": {
+        "type": "PATTERN",
+        "value": "\\S+"
+      }
     },
     "commit": {
       "type": "PATTERN",
