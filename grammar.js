@@ -45,7 +45,8 @@ module.exports = grammar({
     index: ($) =>
       seq(INDEX_PRELUDE, $.commit, "..", $.commit, optional($.mode)),
 
-    similarity: ($) => seq(SIMILARITY_PRELUDE, "index", field("score", /\d+%/)),
+    similarity: ($) =>
+      seq(SIMILARITY_PRELUDE, "index", field("score", /\d+/), "%"),
 
     file: ($) => seq(FILE_PRELUDE, $.filename),
 

@@ -98,6 +98,11 @@
     }
   },
   {
+    "type": "mode",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "similarity",
     "named": true,
     "fields": {}
@@ -150,6 +155,10 @@
     }
   },
   {
+    "type": "%",
+    "named": false
+  },
+  {
     "type": "+",
     "named": false
   },
@@ -200,10 +209,6 @@
   {
     "type": "mode",
     "named": false
-  },
-  {
-    "type": "mode",
-    "named": true
   },
   {
     "type": "similarity",

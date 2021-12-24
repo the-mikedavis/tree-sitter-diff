@@ -225,8 +225,12 @@
           "name": "score",
           "content": {
             "type": "PATTERN",
-            "value": "\\d+%"
+            "value": "\\d+"
           }
+        },
+        {
+          "type": "STRING",
+          "value": "%"
         }
       ]
     },
