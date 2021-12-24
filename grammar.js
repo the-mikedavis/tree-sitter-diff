@@ -3,7 +3,7 @@ const WHITE_SPACE = /[\t\f\v ]+/;
 const ANYTHING = /[^\r\n]+/;
 
 module.exports = grammar({
-  name: "gitdiff",
+  name: "git_diff",
 
   extras: ($) => [WHITE_SPACE],
 

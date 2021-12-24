@@ -1,4 +1,4 @@
-//! This crate provides gitdiff language support for the [tree-sitter][] parsing library.
+//! This crate provides git_diff language support for the [tree-sitter][] parsing library.
 //!
 //! Typically, you will use the [language][language func] function to add this language to a
 //! tree-sitter [Parser][], and then use the parser to parse some code:
@@ -6,7 +6,7 @@
 //! ```
 //! let code = "";
 //! let mut parser = tree_sitter::Parser::new();
-//! parser.set_language(tree_sitter_gitdiff::language()).expect("Error loading gitdiff grammar");
+//! parser.set_language(tree_sitter_git_diff::language()).expect("Error loading git_diff grammar");
 //! let tree = parser.parse(code, None).unwrap();
 //! ```
 //!
@@ -18,14 +18,14 @@
 use tree_sitter::Language;
 
 extern "C" {
-    fn tree_sitter_gitdiff() -> Language;
+    fn tree_sitter_git_diff() -> Language;
 }
 
 /// Get the tree-sitter [Language][] for this grammar.
 ///
 /// [Language]: https://docs.rs/tree-sitter/*/tree_sitter/struct.Language.html
 pub fn language() -> Language {
-    unsafe { tree_sitter_gitdiff() }
+    unsafe { tree_sitter_git_diff() }
 }
 
 /// The content of the [`node-types.json`][] file for this grammar.
@@ -47,6 +47,6 @@ mod tests {
         let mut parser = tree_sitter::Parser::new();
         parser
             .set_language(super::language())
-            .expect("Error loading gitdiff language");
+            .expect("Error loading git_diff language");
     }
 }

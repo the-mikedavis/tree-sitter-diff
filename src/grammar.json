@@ -1,5 +1,5 @@
 {
-  "name": "gitdiff",
+  "name": "git_diff",
   "rules": {
     "source": {
       "type": "REPEAT",
