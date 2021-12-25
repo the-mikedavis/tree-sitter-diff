@@ -8,7 +8,8 @@ module.exports = grammar({
   extras: ($) => [WHITE_SPACE],
 
   rules: {
-    source: ($) => repeat(seq($._line, NEWLINE)),
+    source: ($) =>
+      seq(repeat(NEWLINE), repeat(seq($._line, optional(NEWLINE)))),
 
     _line: ($) =>
       choice(
