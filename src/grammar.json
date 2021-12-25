@@ -7,33 +7,38 @@
         {
           "type": "REPEAT",
           "content": {
-            "type": "PATTERN",
-            "value": "\\r?\\n"
-          }
-        },
-        {
-          "type": "REPEAT",
-          "content": {
             "type": "SEQ",
             "members": [
-              {
-                "type": "SYMBOL",
-                "name": "_line"
-              },
               {
                 "type": "CHOICE",
                 "members": [
                   {
-                    "type": "PATTERN",
-                    "value": "\\r?\\n"
+                    "type": "SYMBOL",
+                    "name": "_line"
                   },
                   {
                     "type": "BLANK"
                   }
                 ]
+              },
+              {
+                "type": "PATTERN",
+                "value": "\\r?\\n"
               }
             ]
           }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "SYMBOL",
+              "name": "_line"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
         }
       ]
     },

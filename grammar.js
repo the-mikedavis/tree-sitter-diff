@@ -9,7 +9,7 @@ module.exports = grammar({
 
   rules: {
     source: ($) =>
-      seq(repeat(NEWLINE), repeat(seq($._line, optional(NEWLINE)))),
+      seq(repeat(seq(optional($._line), NEWLINE)), optional($._line)),
 
     _line: ($) =>
       choice(
@@ -51,7 +51,6 @@ module.exports = grammar({
       iseq("@@", $.linerange, $.linerange, "@@", optional(ANYTHING)),
 
     addition: ($) => iseq("+", optional(ANYTHING)),
-
     deletion: ($) => iseq("-", optional(ANYTHING)),
 
     context: ($) => token(prec(-1, ANYTHING)),
