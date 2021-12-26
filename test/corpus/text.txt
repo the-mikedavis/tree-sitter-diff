@@ -149,3 +149,79 @@ Just a file declaration and no newline
 (source
   (old_file
     (filename)))
+
+================================================================================
+location tokens in diff
+================================================================================
+diff --git a/runtime/queries/elixir/highlights.scm b/runtime/queries/elixir/highlights.scm
+index 76fd2af..308ff34 100644
+--- a/runtime/queries/elixir/highlights.scm
++++ b/runtime/queries/elixir/highlights.scm
+@@ -125,7 +125,8 @@
+ (sigil
+   (sigil_name) @__name__
+   quoted_start: _ @string.special
+-  quoted_end: _ @string.special) @string.special
++  quoted_end: _ @string.special
++  (#not-eq? @__name__ "H")) @string.special
+ 
+ ; Calls
+ 
+diff --git a/runtime/queries/elixir/injections.scm b/runtime/queries/elixir/injections.scm
+index 321c90a..b4a5cba 100644
+--- a/runtime/queries/elixir/injections.scm
++++ b/runtime/queries/elixir/injections.scm
+@@ -1,2 +1,8 @@
+ ((comment) @injection.content
+  (#set! injection.language "comment"))
++
++((sigil
++  (sigil_name) @_sigil_name
++  (quoted_content) @injection.content)
++ (#eq? @_sigil_name "H")
++ (#set! injection.language "heex"))
+
+--------------------------------------------------------------------------------
+
+(source
+  (command
+    (filename))
+  (index
+    (commit)
+    (commit)
+    (mode))
+  (old_file
+    (filename))
+  (new_file
+    (filename))
+  (location
+    (linerange)
+    (linerange))
+  (context)
+  (context)
+  (context)
+  (deletion)
+  (addition)
+  (addition)
+  (context)
+  (command
+    (filename))
+  (index
+    (commit)
+    (commit)
+    (mode))
+  (old_file
+    (filename))
+  (new_file
+    (filename))
+  (location
+    (linerange)
+    (linerange))
+  (context)
+  (context)
+  (addition)
+  (addition)
+  (addition)
+  (addition)
+  (addition)
+  (addition))
