@@ -42,3 +42,18 @@ jobs:
           git add src
           git commit -m "Generate parser" || true
           git push
+
+      - name: Checkout gh-pages branch to ./gh-pages
+        uses: actions/checkout@v2
+        with:
+          ref: gh-pages
+          path: ./gh-pages
+
+      - run: mv *.wasm ./gh-pages
+
+      - name: Commit generated wasm binding to the gh-pages branch
+        run: |
+          cd ./gh-pages
+          git add *.wasm
+          git commit -m "Generate WASM binding" || true
+          git push
