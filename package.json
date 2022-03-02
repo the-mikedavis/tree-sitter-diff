@@ -1,7 +1,7 @@
 {
-  "name": "tree-sitter-gitdiff",
+  "name": "tree-sitter-diff",
   "version": "0.0.1",
-  "description": "A tree-sitter grammar for git diffs",
+  "description": "A tree-sitter grammar for diffs",
   "main": "bindings/node",
   "scripts": {
     "test": "tree-sitter test",
@@ -10,32 +10,32 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/the-mikedavis/tree-sitter-gitdiff.git"
+    "url": "git+https://github.com/the-mikedavis/tree-sitter-diff.git"
   },
   "keywords": [
     "tree-sitter",
     "parser",
     "lexer",
-    "git",
     "diff"
   ],
   "author": "the-mikedavis",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/the-mikedavis/tree-sitter-gitdiff/issues"
+    "url": "https://github.com/the-mikedavis/tree-sitter-diff/issues"
   },
-  "homepage": "https://github.com/the-mikedavis/tree-sitter-gitdiff#readme",
+  "homepage": "https://github.com/the-mikedavis/tree-sitter-diff#readme",
   "dependencies": {
     "nan": "^2.15.0"
   },
   "devDependencies": {
     "prettier": "^2.5.1",
-    "tree-sitter-cli": "^0.20.1"
+    "tree-sitter-cli": "^0.20.4"
   },
   "tree-sitter": [
     {
       "file-types": [
-        "diff"
+        "diff",
+        "patch"
       ]
     }
   ]

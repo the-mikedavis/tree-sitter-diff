@@ -1,10 +1,10 @@
 [package]
-name = "tree-sitter-gitdiff"
-description = "gitdiff grammar for the tree-sitter parsing library"
+name = "tree-sitter-diff"
+description = "diff grammar for the tree-sitter parsing library"
 version = "0.0.1"
-keywords = ["incremental", "parsing", "gitdiff"]
+keywords = ["incremental", "parsing", "diff"]
 categories = ["parsing", "text-editors"]
-repository = "https://github.com/tree-sitter/tree-sitter-gitdiff"
+repository = "https://github.com/tree-sitter/tree-sitter-diff"
 edition = "2018"
 license = "MIT"
 

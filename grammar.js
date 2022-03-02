@@ -3,7 +3,7 @@ const WHITE_SPACE = /[\t\f\v ]+/;
 const ANYTHING = /[^\r\n]+/;
 
 module.exports = grammar({
-  name: "git_diff",
+  name: "diff",
 
   extras: ($) => [WHITE_SPACE],
 
@@ -26,6 +26,7 @@ module.exports = grammar({
         $.context
       ),
 
+    // FIXME: remove git assumption
     command: ($) => iseq("diff", "--git", $.filename),
 
     file_change: ($) =>
