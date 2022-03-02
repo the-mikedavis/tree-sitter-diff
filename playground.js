@@ -82,7 +82,7 @@ let tree;
   async function handleLanguageChange() {
     const newLanguageName = languageSelect.value;
     if (!languagesByName[newLanguageName]) {
-      const url = 'https://raw.githubusercontent.com/the-mikedavis/tree-sitter-diff/main/tree-sitter-diff.wasm'
+      const url = './tree-sitter-diff.wasm'
       languageSelect.disabled = true;
       try {
         languagesByName[newLanguageName] = await TreeSitter.Language.load(url);
