@@ -36,7 +36,9 @@ jobs:
           npx tree-sitter build-wasm
 
       - name: Commit generated parser files
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Generate parser
-          file_pattern: src *.wasm
+        run: |
+          git config --local user.email "$(git log --format='%ae' HEAD^!)"
+          git config --local user.name "$(git log --format='%an' HEAD^!)"
+          git add src
+          git commit -m "Generate parser" || true
+          git push
