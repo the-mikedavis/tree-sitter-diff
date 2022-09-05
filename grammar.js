@@ -52,7 +52,8 @@ module.exports = grammar({
       iseq("@@", $.linerange, $.linerange, "@@", optional(ANYTHING)),
 
     addition: ($) => iseq("+", optional(ANYTHING)),
-    deletion: ($) => iseq("-", optional(ANYTHING)),
+    deletion: ($) =>
+      choice(iseq("-", optional(ANYTHING)), iseq("--", optional(ANYTHING))),
 
     context: ($) => token(prec(-1, ANYTHING)),
 
