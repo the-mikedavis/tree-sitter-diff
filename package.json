@@ -33,10 +33,7 @@
   },
   "tree-sitter": [
     {
-      "file-types": [
-        "diff",
-        "patch"
-      ]
+      "file-types": ["diff"]
     }
   ]
 }
