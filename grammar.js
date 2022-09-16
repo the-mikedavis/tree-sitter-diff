@@ -53,7 +53,12 @@ module.exports = grammar({
 
     addition: ($) => iseq("+", optional(ANYTHING)),
     deletion: ($) =>
-      choice(iseq("-", optional(ANYTHING)), iseq("--", optional(ANYTHING))),
+      choice(
+        iseq("-", optional(ANYTHING)),
+        iseq("--", optional(ANYTHING)),
+        iseq("---"),
+        iseq("----", optional(ANYTHING))
+      ),
 
     context: ($) => token(prec(-1, ANYTHING)),
 
