@@ -51,7 +51,10 @@ module.exports = grammar({
     location: ($) =>
       iseq("@@", $.linerange, $.linerange, "@@", optional(ANYTHING)),
 
-    addition: ($) => iseq("+", optional(ANYTHING)),
+    addition: ($) => choice(
+      iseq("+", optional(ANYTHING)),
+      iseq("++", optional(ANYTHING)),
+    ),
     deletion: ($) =>
       choice(
         iseq("-", optional(ANYTHING)),
