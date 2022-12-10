@@ -54,6 +54,8 @@ module.exports = grammar({
     addition: ($) => choice(
       iseq("+", optional(ANYTHING)),
       iseq("++", optional(ANYTHING)),
+      iseq("+++"),
+      iseq("++++", optional(ANYTHING)),
     ),
     deletion: ($) =>
       choice(
