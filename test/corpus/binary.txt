@@ -9,7 +9,8 @@ Binary files a/tree-sitter-gitdiff.wasm and b/tree-sitter-gitdiff.wasm differ
 
 (source
   (command
-    (filename))
+    (old_file)
+    (new_file))
   (index
     (commit)
     (commit)
@@ -30,7 +31,8 @@ Binary files a/docs/playground.png and /dev/null differ
 
 (source
   (command
-    (filename))
+    (old_file)
+    (new_file))
   (file_change
     (mode))
   (index

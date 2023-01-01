@@ -24,11 +24,15 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
         {
-          "type": "filename",
+          "type": "new_file",
+          "named": true
+        },
+        {
+          "type": "old_file",
           "named": true
         }
       ]
@@ -57,11 +61,6 @@
         }
       ]
     }
-  },
-  {
-    "type": "filename",
-    "named": true,
-    "fields": {}
   },
   {
     "type": "index",
@@ -108,7 +107,7 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "filename",
@@ -123,7 +122,7 @@
     "fields": {},
     "children": {
       "multiple": false,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "filename",
@@ -267,6 +266,10 @@
   {
     "type": "file",
     "named": false
+  },
+  {
+    "type": "filename",
+    "named": true
   },
   {
     "type": "files",

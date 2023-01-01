@@ -20,7 +20,8 @@ index dc36969..f37fde0 100644
 
 (source
   (command
-    (filename))
+    (old_file)
+    (new_file))
   (index
     (commit)
     (commit)
@@ -52,7 +53,8 @@ index 0000000..e69de29
 
 (source
   (command
-    (filename))
+    (old_file)
+    (new_file))
   (file_change
     (mode))
   (index
@@ -70,7 +72,8 @@ index e69de29..0000000
 
 (source
   (command
-    (filename))
+    (old_file)
+    (new_file))
   (file_change
     (mode))
   (index
@@ -89,7 +92,8 @@ rename to tmp.md
 
 (source
   (command
-    (filename))
+    (old_file)
+    (new_file))
   (similarity)
   (file_change
     (filename))
@@ -124,7 +128,8 @@ index 00000000..ee9808dc
 
 (source
   (command
-    (filename))
+    (old_file)
+    (new_file))
   (file_change
     (mode))
   (index
@@ -185,7 +190,8 @@ index 321c90a..b4a5cba 100644
 
 (source
   (command
-    (filename))
+    (old_file)
+    (new_file))
   (index
     (commit)
     (commit)
@@ -205,7 +211,8 @@ index 321c90a..b4a5cba 100644
   (addition)
   (context)
   (command
-    (filename))
+    (old_file)
+    (new_file))
   (index
     (commit)
     (commit)
