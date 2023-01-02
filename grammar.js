@@ -27,7 +27,13 @@ module.exports = grammar({
       ),
 
     // FIXME: remove git assumption
-    command: ($) => iseq("diff", "--git", alias($.filename, $.old_file), alias($.filename, $.new_file)),
+    command: ($) =>
+      iseq(
+        "diff",
+        "--git",
+        alias($.filename, $.old_file),
+        alias($.filename, $.new_file)
+      ),
 
     file_change: ($) =>
       iseq(
