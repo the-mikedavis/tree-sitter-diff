@@ -3,3 +3,4 @@
 /log.html
 /build/
 /*.wasm
+/.build
