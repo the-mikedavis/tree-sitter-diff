@@ -106,8 +106,22 @@
           "value": "--git"
         },
         {
-          "type": "SYMBOL",
-          "name": "filename"
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "filename"
+          },
+          "named": true,
+          "value": "old_file"
+        },
+        {
+          "type": "ALIAS",
+          "content": {
+            "type": "SYMBOL",
+            "name": "filename"
+          },
+          "named": true,
+          "value": "new_file"
         }
       ]
     },
@@ -542,11 +556,8 @@
       "value": "[-\\+]\\d+(,\\d+)?"
     },
     "filename": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "PATTERN",
-        "value": "\\S+"
-      }
+      "type": "PATTERN",
+      "value": "\\S+"
     },
     "commit": {
       "type": "PATTERN",
