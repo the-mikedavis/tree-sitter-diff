@@ -20,6 +20,72 @@
     }
   },
   {
+    "type": "block",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "binary_change",
+          "named": true
+        },
+        {
+          "type": "command",
+          "named": true
+        },
+        {
+          "type": "file_change",
+          "named": true
+        },
+        {
+          "type": "hunks",
+          "named": true
+        },
+        {
+          "type": "index",
+          "named": true
+        },
+        {
+          "type": "new_file",
+          "named": true
+        },
+        {
+          "type": "old_file",
+          "named": true
+        },
+        {
+          "type": "similarity",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "changes",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "addition",
+          "named": true
+        },
+        {
+          "type": "context",
+          "named": true
+        },
+        {
+          "type": "deletion",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
     "type": "command",
     "named": true,
     "fields": {},
@@ -62,6 +128,47 @@
     "type": "filename",
     "named": true,
     "fields": {}
+  },
+  {
+    "type": "hunk",
+    "named": true,
+    "fields": {
+      "changes": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "changes",
+            "named": true
+          }
+        ]
+      },
+      "location": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "location",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "hunks",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "hunk",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "index",
@@ -154,7 +261,7 @@
           "named": true
         },
         {
-          "type": "command",
+          "type": "block",
           "named": true
         },
         {
