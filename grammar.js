@@ -9,11 +9,13 @@ module.exports = grammar({
 
   rules: {
     source: ($) =>
-      seq(repeat(seq(optional($._line), NEWLINE)), optional($._line)),
+      seq(
+        repeat(choice($.block, seq(optional($._line), NEWLINE))),
+        optional($._line)
+      ),
 
     _line: ($) =>
       choice(
-        $.command,
         $.file_change,
         $.binary_change,
         $.index,
@@ -24,6 +26,42 @@ module.exports = grammar({
         $.addition,
         $.deletion,
         $.context
+      ),
+
+    block: ($) =>
+      prec.right(
+        seq(
+          $.command,
+          NEWLINE,
+          repeat(
+            seq(
+              choice($.file_change, $.binary_change, $.index, $.similarity),
+              NEWLINE
+            )
+          ),
+          optional(seq($.old_file, NEWLINE, $.new_file, NEWLINE, $.hunks))
+        )
+      ),
+
+    hunks: ($) => prec.right(repeat1($.hunk)),
+
+    hunk: ($) =>
+      prec.right(
+        seq(
+          field("location", $.location),
+          NEWLINE,
+          optional(field("changes", $.changes))
+        )
+      ),
+
+    changes: ($) =>
+      prec.right(
+        repeat1(
+          seq(
+            choice($.addition, $.deletion, $.context),
+            prec.right(repeat1(NEWLINE))
+          )
+        )
       ),
 
     // FIXME: remove git assumption

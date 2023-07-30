@@ -8,15 +8,16 @@ Binary files a/tree-sitter-gitdiff.wasm and b/tree-sitter-gitdiff.wasm differ
 --------------------------------------------------------------------------------
 
 (source
-  (command
-    (filename))
-  (index
-    (commit)
-    (commit)
-    (mode))
-  (binary_change
-    (filename)
-    (filename)))
+  (block
+    (command
+      (filename))
+    (index
+      (commit)
+      (commit)
+      (mode))
+    (binary_change
+      (filename)
+      (filename))))
 
 ================================================================================
 Deleted binary file
@@ -29,13 +30,14 @@ Binary files a/docs/playground.png and /dev/null differ
 --------------------------------------------------------------------------------
 
 (source
-  (command
-    (filename))
-  (file_change
-    (mode))
-  (index
-    (commit)
-    (commit))
-  (binary_change
-    (filename)
-    (filename)))
+  (block
+    (command
+      (filename))
+    (file_change
+      (mode))
+    (index
+      (commit)
+      (commit))
+    (binary_change
+      (filename)
+      (filename))))

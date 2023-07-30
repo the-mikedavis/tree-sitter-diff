@@ -19,27 +19,31 @@ index dc36969..f37fde0 100644
 --------------------------------------------------------------------------------
 
 (source
-  (command
-    (filename))
-  (index
-    (commit)
-    (commit)
-    (mode))
-  (old_file
-    (filename))
-  (new_file
-    (filename))
-  (location
-    (linerange)
-    (linerange))
-  (context)
-  (context)
-  (deletion)
-  (addition)
-  (addition)
-  (addition)
-  (context)
-  (context))
+  (block
+    (command
+      (filename))
+    (index
+      (commit)
+      (commit)
+      (mode))
+    (old_file
+      (filename))
+    (new_file
+      (filename))
+    (hunks
+      (hunk
+        (location
+          (linerange)
+          (linerange))
+        (changes
+          (context)
+          (context)
+          (deletion)
+          (addition)
+          (addition)
+          (addition)
+          (context)
+          (context))))))
 
 ================================================================================
 New empty file
@@ -51,13 +55,14 @@ index 0000000..e69de29
 --------------------------------------------------------------------------------
 
 (source
-  (command
-    (filename))
-  (file_change
-    (mode))
-  (index
-    (commit)
-    (commit)))
+  (block
+    (command
+      (filename))
+    (file_change
+      (mode))
+    (index
+      (commit)
+      (commit))))
 
 ================================================================================
 Deleted empty file
@@ -69,13 +74,14 @@ index e69de29..0000000
 --------------------------------------------------------------------------------
 
 (source
-  (command
-    (filename))
-  (file_change
-    (mode))
-  (index
-    (commit)
-    (commit)))
+  (block
+    (command
+      (filename))
+    (file_change
+      (mode))
+    (index
+      (commit)
+      (commit))))
 
 ================================================================================
 File rename
@@ -88,13 +94,14 @@ rename to tmp.md
 --------------------------------------------------------------------------------
 
 (source
-  (command
-    (filename))
-  (similarity)
-  (file_change
-    (filename))
-  (file_change
-    (filename)))
+  (block
+    (command
+      (filename))
+    (similarity)
+    (file_change
+      (filename))
+    (file_change
+      (filename))))
 
 ================================================================================
 Location with no context
@@ -123,22 +130,26 @@ index 00000000..ee9808dc
 --------------------------------------------------------------------------------
 
 (source
-  (command
-    (filename))
-  (file_change
-    (mode))
-  (index
-    (commit)
-    (commit))
-  (old_file
-    (filename))
-  (new_file
-    (filename))
-  (location
-    (linerange)
-    (linerange))
-  (addition)
-  (context))
+  (block
+    (command
+      (filename))
+    (file_change
+      (mode))
+    (index
+      (commit)
+      (commit))
+    (old_file
+      (filename))
+    (new_file
+      (filename))
+    (hunks
+      (hunk
+        (location
+          (linerange)
+          (linerange))
+        (changes
+          (addition)
+          (context))))))
 
 ================================================================================
 Just a file declaration and no newline
@@ -184,47 +195,55 @@ index 321c90a..b4a5cba 100644
 --------------------------------------------------------------------------------
 
 (source
-  (command
-    (filename))
-  (index
-    (commit)
-    (commit)
-    (mode))
-  (old_file
-    (filename))
-  (new_file
-    (filename))
-  (location
-    (linerange)
-    (linerange))
-  (context)
-  (context)
-  (context)
-  (deletion)
-  (addition)
-  (addition)
-  (context)
-  (command
-    (filename))
-  (index
-    (commit)
-    (commit)
-    (mode))
-  (old_file
-    (filename))
-  (new_file
-    (filename))
-  (location
-    (linerange)
-    (linerange))
-  (context)
-  (context)
-  (addition)
-  (addition)
-  (addition)
-  (addition)
-  (addition)
-  (addition))
+  (block
+    (command
+      (filename))
+    (index
+      (commit)
+      (commit)
+      (mode))
+    (old_file
+      (filename))
+    (new_file
+      (filename))
+    (hunks
+      (hunk
+        (location
+          (linerange)
+          (linerange))
+        (changes
+          (context)
+          (context)
+          (context)
+          (deletion)
+          (addition)
+          (addition)
+          (context)))))
+  (block
+    (command
+      (filename))
+    (index
+      (commit)
+      (commit)
+      (mode))
+    (old_file
+      (filename))
+    (new_file
+      (filename))
+    (hunks
+      (hunk
+        (location
+          (linerange)
+          (linerange))
+        (changes
+          (context)
+          (context)
+          (addition)
+          (addition)
+          (addition)
+          (addition)
+          (addition)
+          (addition))))))
 
 ================================================================================
 Leading dash deletions
