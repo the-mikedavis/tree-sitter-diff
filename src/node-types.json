@@ -336,10 +336,6 @@
     "named": false
   },
   {
-    "type": "--git",
-    "named": false
-  },
-  {
     "type": "..",
     "named": false
   },
