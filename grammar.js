@@ -64,8 +64,7 @@ module.exports = grammar({
         )
       ),
 
-    // FIXME: remove git assumption
-    command: ($) => iseq("diff", "--git", $.filename),
+    command: ($) => iseq("diff", /[-\w]+/, $.filename),
 
     file_change: ($) =>
       iseq(
