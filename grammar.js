@@ -67,12 +67,10 @@ module.exports = grammar({
     command: ($) => iseq("diff", alias(/[-\w]+/, $.argument), $.filename),
 
     file_change: ($) =>
-      iseq(
-        field("kind", choice("new", "deleted", "rename")),
-        choice(
-          seq("file", "mode", $.mode),
-          seq(choice("from", "to"), $.filename)
-        )
+      choice(
+        seq(choice("new", "deleted"), "file", "mode", $.mode),
+        seq(choice("new", "old"), "mode", $.mode),
+        seq("rename", choice("from", "to"), $.filename)
       ),
 
     binary_change: ($) =>

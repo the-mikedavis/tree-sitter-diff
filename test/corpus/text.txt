@@ -284,3 +284,22 @@ Leading plus additions
   (addition)
   (addition)
   (addition))
+
+================================================================================
+File mode changes
+================================================================================
+diff --git a/LICENSE b/LICENSE
+old mode 100644
+new mode 100755
+
+--------------------------------------------------------------------------------
+
+(source
+  (block
+    (command
+      (argument)
+      (filename))
+    (file_change
+      (mode))
+    (file_change
+      (mode))))
