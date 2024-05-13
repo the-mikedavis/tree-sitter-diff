@@ -101,7 +101,8 @@ rename to tmp.md
     (command
       (argument)
       (filename))
-    (similarity)
+    (similarity
+      (score))
     (file_change
       (filename))
     (file_change

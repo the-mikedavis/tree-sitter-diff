@@ -80,7 +80,7 @@ module.exports = grammar({
 
     index: ($) => iseq("index", $.commit, "..", $.commit, optional($.mode)),
 
-    similarity: ($) => iseq("similarity", "index", field("score", /\d+/), "%"),
+    similarity: ($) => iseq("similarity", "index", alias(/\d+/, $.score), "%"),
 
     old_file: ($) => iseq("---", $.filename),
     new_file: ($) => iseq("+++", $.filename),
