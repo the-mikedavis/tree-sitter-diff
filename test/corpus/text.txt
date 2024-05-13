@@ -21,6 +21,7 @@ index dc36969..f37fde0 100644
 (source
   (block
     (command
+      (argument)
       (filename))
     (index
       (commit)
@@ -57,6 +58,7 @@ index 0000000..e69de29
 (source
   (block
     (command
+      (argument)
       (filename))
     (file_change
       (mode))
@@ -76,6 +78,7 @@ index e69de29..0000000
 (source
   (block
     (command
+      (argument)
       (filename))
     (file_change
       (mode))
@@ -96,6 +99,7 @@ rename to tmp.md
 (source
   (block
     (command
+      (argument)
       (filename))
     (similarity)
     (file_change
@@ -132,6 +136,7 @@ index 00000000..ee9808dc
 (source
   (block
     (command
+      (argument)
       (filename))
     (file_change
       (mode))
@@ -197,6 +202,7 @@ index 321c90a..b4a5cba 100644
 (source
   (block
     (command
+      (argument)
       (filename))
     (index
       (commit)
@@ -221,6 +227,7 @@ index 321c90a..b4a5cba 100644
           (context)))))
   (block
     (command
+      (argument)
       (filename))
     (index
       (commit)

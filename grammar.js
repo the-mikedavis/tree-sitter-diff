@@ -64,7 +64,7 @@ module.exports = grammar({
         )
       ),
 
-    command: ($) => iseq("diff", /[-\w]+/, $.filename),
+    command: ($) => iseq("diff", alias(/[-\w]+/, $.argument), $.filename),
 
     file_change: ($) =>
       iseq(
