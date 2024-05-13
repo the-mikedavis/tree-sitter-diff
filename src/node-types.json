@@ -90,9 +90,13 @@
     "named": true,
     "fields": {},
     "children": {
-      "multiple": false,
+      "multiple": true,
       "required": true,
       "types": [
+        {
+          "type": "argument",
+          "named": true
+        },
         {
           "type": "filename",
           "named": true
@@ -242,7 +246,17 @@
   {
     "type": "similarity",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "score",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "source",
@@ -352,12 +366,20 @@
     "named": false
   },
   {
+    "type": "argument",
+    "named": true
+  },
+  {
     "type": "commit",
     "named": true
   },
   {
     "type": "context",
     "named": true
+  },
+  {
+    "type": "deleted",
+    "named": false
   },
   {
     "type": "diff",
@@ -390,6 +412,22 @@
   {
     "type": "mode",
     "named": false
+  },
+  {
+    "type": "new",
+    "named": false
+  },
+  {
+    "type": "old",
+    "named": false
+  },
+  {
+    "type": "rename",
+    "named": false
+  },
+  {
+    "type": "score",
+    "named": true
   },
   {
     "type": "similarity",

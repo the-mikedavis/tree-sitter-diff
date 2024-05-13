@@ -278,8 +278,13 @@
           }
         },
         {
-          "type": "PATTERN",
-          "value": "[-\\w]+"
+          "type": "ALIAS",
+          "content": {
+            "type": "PATTERN",
+            "value": "[-\\w]+"
+          },
+          "named": true,
+          "value": "argument"
         },
         {
           "type": "SYMBOL",
@@ -288,14 +293,12 @@
       ]
     },
     "file_change": {
-      "type": "SEQ",
+      "type": "CHOICE",
       "members": [
         {
-          "type": "IMMEDIATE_TOKEN",
-          "content": {
-            "type": "FIELD",
-            "name": "kind",
-            "content": {
+          "type": "SEQ",
+          "members": [
+            {
               "type": "CHOICE",
               "members": [
                 {
@@ -305,56 +308,72 @@
                 {
                   "type": "STRING",
                   "value": "deleted"
-                },
-                {
-                  "type": "STRING",
-                  "value": "rename"
-                }
-              ]
-            }
-          }
-        },
-        {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "SEQ",
-              "members": [
-                {
-                  "type": "STRING",
-                  "value": "file"
-                },
-                {
-                  "type": "STRING",
-                  "value": "mode"
-                },
-                {
-                  "type": "SYMBOL",
-                  "name": "mode"
                 }
               ]
             },
             {
-              "type": "SEQ",
+              "type": "STRING",
+              "value": "file"
+            },
+            {
+              "type": "STRING",
+              "value": "mode"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "mode"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "CHOICE",
               "members": [
                 {
-                  "type": "CHOICE",
-                  "members": [
-                    {
-                      "type": "STRING",
-                      "value": "from"
-                    },
-                    {
-                      "type": "STRING",
-                      "value": "to"
-                    }
-                  ]
+                  "type": "STRING",
+                  "value": "new"
                 },
                 {
-                  "type": "SYMBOL",
-                  "name": "filename"
+                  "type": "STRING",
+                  "value": "old"
                 }
               ]
+            },
+            {
+              "type": "STRING",
+              "value": "mode"
+            },
+            {
+              "type": "SYMBOL",
+              "name": "mode"
+            }
+          ]
+        },
+        {
+          "type": "SEQ",
+          "members": [
+            {
+              "type": "STRING",
+              "value": "rename"
+            },
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "STRING",
+                  "value": "from"
+                },
+                {
+                  "type": "STRING",
+                  "value": "to"
+                }
+              ]
+            },
+            {
+              "type": "SYMBOL",
+              "name": "filename"
             }
           ]
         }
@@ -443,12 +462,13 @@
           "value": "index"
         },
         {
-          "type": "FIELD",
-          "name": "score",
+          "type": "ALIAS",
           "content": {
             "type": "PATTERN",
             "value": "\\d+"
-          }
+          },
+          "named": true,
+          "value": "score"
         },
         {
           "type": "STRING",
