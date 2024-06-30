@@ -303,3 +303,25 @@ new mode 100755
       (mode))
     (file_change
       (mode))))
+
+================================================================================
+Comments
+================================================================================
+# Some comment
+ # This is not a comment
+# But this is
+ context
+# Empty comment
+#
+ more contex
+
+--------------------------------------------------------------------------------
+
+(source
+  (comment)
+  (context)
+  (comment)
+  (context)
+  (comment)
+  (comment)
+  (context))
