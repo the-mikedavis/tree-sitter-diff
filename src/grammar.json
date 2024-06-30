@@ -93,6 +93,10 @@
         {
           "type": "SYMBOL",
           "name": "context"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "comment"
         }
       ]
     },
@@ -732,6 +736,30 @@
           "value": "[^\\r\\n]+"
         }
       }
+    },
+    "comment": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "IMMEDIATE_TOKEN",
+          "content": {
+            "type": "STRING",
+            "value": "#"
+          }
+        },
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "PATTERN",
+              "value": "[^\\r\\n]+"
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        }
+      ]
     },
     "linerange": {
       "type": "PATTERN",

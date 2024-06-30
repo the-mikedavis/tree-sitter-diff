@@ -105,6 +105,11 @@
     }
   },
   {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
     "type": "deletion",
     "named": true,
     "fields": {}
@@ -279,6 +284,10 @@
           "named": true
         },
         {
+          "type": "comment",
+          "named": true
+        },
+        {
           "type": "context",
           "named": true
         },
@@ -312,6 +321,10 @@
         }
       ]
     }
+  },
+  {
+    "type": "#",
+    "named": false
   },
   {
     "type": "%",
