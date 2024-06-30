@@ -25,7 +25,8 @@ module.exports = grammar({
         $.location,
         $.addition,
         $.deletion,
-        $.context
+        $.context,
+        $.comment,
       ),
 
     block: ($) =>
@@ -102,6 +103,7 @@ module.exports = grammar({
       ),
 
     context: ($) => token(prec(-1, ANYTHING)),
+    comment: ($) => iseq('#', optional(ANYTHING)),
 
     linerange: ($) => /[-\+]\d+(,\d+)?/,
     filename: ($) => repeat1(/\S+/),
