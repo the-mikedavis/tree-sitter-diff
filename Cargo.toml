@@ -1,7 +1,8 @@
 [package]
 name = "tree-sitter-diff"
+authors = ["Michael Davis <mcarsondavis@gmail.com>"]
 description = "diff grammar for the tree-sitter parsing library"
-version = "0.0.1"
+version = "0.1.0"
 keywords = ["incremental", "parsing", "diff"]
 categories = ["parsing", "text-editors"]
 repository = "https://github.com/tree-sitter/tree-sitter-diff"
