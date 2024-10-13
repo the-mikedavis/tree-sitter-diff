@@ -5,6 +5,10 @@
 //!
 //! ```
 //! let code = r#"
+//! diff --git a/tree-sitter-gitdiff.wasm b/tree-sitter-gitdiff.wasm
+//! index 0e9e828..3e32290 100755
+//! Binary files a/tree-sitter-gitdiff.wasm and b/tree-sitter-gitdiff.wasm differ
+//!
 //! "#;
 //! let mut parser = tree_sitter::Parser::new();
 //! let language = tree_sitter_diff::LANGUAGE;
@@ -36,7 +40,7 @@ pub const NODE_TYPES: &str = include_str!("../../src/node-types.json");
 
 // NOTE: uncomment these to include any queries that this grammar contains:
 
-// pub const HIGHLIGHTS_QUERY: &str = include_str!("../../queries/highlights.scm");
+pub const HIGHLIGHTS_QUERY: &str = include_str!("../../queries/highlights.scm");
 // pub const INJECTIONS_QUERY: &str = include_str!("../../queries/injections.scm");
 // pub const LOCALS_QUERY: &str = include_str!("../../queries/locals.scm");
 // pub const TAGS_QUERY: &str = include_str!("../../queries/tags.scm");
