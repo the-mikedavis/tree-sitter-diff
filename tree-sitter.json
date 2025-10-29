@@ -1,0 +1,27 @@
+{
+  "grammars": [
+    {
+      "name": "diff",
+      "path": ".",
+      "scope": "source.diff",
+      "injection-regex": "^diff$",
+      "file-types": [
+        "diff"
+      ],
+      "highlights": "queries/highlights.scm"
+    }
+  ],
+  "metadata": {
+    "version": "0.0.1",
+    "description": "A tree-sitter grammar for diffs",
+  "license": "MIT",
+    "authors": [
+      {
+        "name": "the-mikedavis"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/tree-sitter-grammars/tree-sitter-diff"
+    }
+  }
+}

@@ -2,7 +2,7 @@ const NEWLINE = /\r?\n/;
 const WHITE_SPACE = /[\t\f\v ]+/;
 const ANYTHING = /[^\r\n]+/;
 
-module.exports = grammar({
+export default grammar({
   name: "diff",
 
   extras: ($) => [WHITE_SPACE],

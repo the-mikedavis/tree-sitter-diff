@@ -10,6 +10,7 @@
     "start": "tree-sitter playground",
     "test": "node --test bindings/node/*_test.js"
   },
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/the-mikedavis/tree-sitter-diff.git"
