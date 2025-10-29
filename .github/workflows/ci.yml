@@ -1,37 +1,53 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ${{github.workflow}}-${{github.ref}}
+  cancel-in-progress: true
 
 jobs:
-  bless:
-    name: Bless
-    runs-on: ubuntu-latest
-
+  test:
+    name: Test parser
+    runs-on: ${{matrix.os}}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - name: Set up repository
+        uses: actions/checkout@v4
 
-      - name: Install Node
-        uses: actions/setup-node@v2
+      - name: Set up tree-sitter
+        uses: tree-sitter/setup-action@v2
         with:
-          node-version: "14.x"
+          install-lib: false
 
-      - name: Cache npm dependencies
-        uses: actions/cache@v2
+      - name: Run tests
+        uses: tree-sitter/parser-test-action@v2
+
+  query:
+    name: Validate queries
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up repository
+        uses: actions/checkout@v4
+
+      - name: Set up tree-sitter
+        uses: tree-sitter/setup-action@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          install-lib: false
 
-      - name: Install npm dependencies
-        run: npm ci
+      - name: Build parser
+        run: tree-sitter build
 
-      - name: Ensure generated parser files are up to date
-        run: npx tree-sitter generate
+      - name: Set up ts_query_ls
+        run: curl -fL https://github.com/ribru17/ts_query_ls/releases/latest/download/ts_query_ls-x86_64-unknown-linux-gnu.tar.gz | tar -xz
 
-      - name: Run tree-sitter tests
-        run: npx tree-sitter test
-
-      - name: Check formatting
-        run: npx prettier --trailing-comma es5 --check grammar.js
+      - name: Check queries
+        run: ./ts_query_ls check -f queries/
