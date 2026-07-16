@@ -2,7 +2,7 @@
 
 [![CI][ci-badge]][ci-workflow]
 
-_A [tree-sitter][tree-sitter] grammar for `diff`s_
+A [tree-sitter][tree-sitter] grammar for [git unified `diff`s](https://git-scm.com/docs/git-diff#generate_patch_text_with_p)
 
 Highlighting a `.diff` file:
 
