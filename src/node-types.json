@@ -81,6 +81,10 @@
         {
           "type": "deletion",
           "named": true
+        },
+        {
+          "type": "special",
+          "named": true
         }
       ]
     }
@@ -106,6 +110,11 @@
   },
   {
     "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "context",
     "named": true,
     "fields": {}
   },
@@ -319,9 +328,22 @@
         {
           "type": "similarity",
           "named": true
+        },
+        {
+          "type": "special",
+          "named": true
         }
       ]
     }
+  },
+  {
+    "type": "special",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": " ",
+    "named": false
   },
   {
     "type": "#",
@@ -376,6 +398,10 @@
     "named": false
   },
   {
+    "type": "\\",
+    "named": false
+  },
+  {
     "type": "and",
     "named": false
   },
@@ -385,10 +411,6 @@
   },
   {
     "type": "commit",
-    "named": true
-  },
-  {
-    "type": "context",
     "named": true
   },
   {

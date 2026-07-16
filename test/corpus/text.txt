@@ -39,6 +39,58 @@ index dc36969..f37fde0 100644
         (changes
           (context)
           (context)
+          (context)
+          (deletion)
+          (addition)
+          (addition)
+          (addition)
+          (context)
+          (context))))))
+
+================================================================================
+Single-file small change with preceding empty context
+================================================================================
+diff --git a/grammar.js b/grammar.js
+index dc36969..f37fde0 100644
+--- a/grammar.js
++++ b/grammar.js
+@@ -6,6 +6,8 @@ module.exports = grammar({
+ 
+   extras: ($) => [],
+ 
+   rules: {
+-    source: ($) => "hello",
++    source: ($) => repeat($._line),
++
++    _line: ($) => choice(),
+   },
+ });
+
+--------------------------------------------------------------------------------
+
+(source
+  (block
+    (command
+      (argument)
+      (filename))
+    (index
+      (commit)
+      (commit)
+      (mode))
+    (old_file
+      (filename))
+    (new_file
+      (filename))
+    (hunks
+      (hunk
+        (location
+          (linerange)
+          (linerange))
+        (changes
+          (context)
+          (context)
+          (context)
+          (context)
           (deletion)
           (addition)
           (addition)
@@ -155,7 +207,7 @@ index 00000000..ee9808dc
           (linerange))
         (changes
           (addition)
-          (context))))))
+          (special))))))
 
 ================================================================================
 Just a file declaration and no newline
@@ -225,6 +277,8 @@ index 321c90a..b4a5cba 100644
           (deletion)
           (addition)
           (addition)
+          (context)
+          (context)
           (context)))))
   (block
     (command
