@@ -1,20 +1,21 @@
 {
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
   "grammars": [
     {
       "name": "diff",
-      "path": ".",
       "scope": "source.diff",
-      "injection-regex": "^diff$",
+      "path": ".",
       "file-types": [
         "diff"
       ],
-      "highlights": "queries/highlights.scm"
+      "highlights": "queries/highlights.scm",
+      "injection-regex": "^diff$"
     }
   ],
   "metadata": {
     "version": "0.1.0",
+    "license": "MIT",
     "description": "A tree-sitter grammar for diffs",
-  "license": "MIT",
     "authors": [
       {
         "name": "the-mikedavis"
@@ -23,5 +24,15 @@
     "links": {
       "repository": "https://github.com/tree-sitter-grammars/tree-sitter-diff"
     }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "java": false,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
   }
 }

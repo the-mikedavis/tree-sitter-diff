@@ -1,6 +1,7 @@
 LANGUAGE_NAME := tree-sitter-diff
 HOMEPAGE_URL := https://github.com/tree-sitter-grammars/tree-sitter-diff
 VERSION := 0.1.0
+DESCRIPTION := A tree-sitter grammar for diffs
 
 # repository
 SRC_DIR := src
