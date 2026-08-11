@@ -78,8 +78,8 @@
 
 (binary_patch
   forward: (binary_hunk
-    (data) @diff.plus))
+    (payload) @diff.plus))
 
 (binary_patch
   reverse: (binary_hunk
-    (data) @diff.minus))
+    (payload) @diff.minus))

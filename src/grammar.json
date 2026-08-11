@@ -310,7 +310,7 @@
           },
           {
             "type": "SYMBOL",
-            "name": "data"
+            "name": "payload"
           },
           {
             "type": "PREC_RIGHT",
@@ -326,7 +326,7 @@
         ]
       }
     },
-    "data": {
+    "payload": {
       "type": "PREC_RIGHT",
       "value": 0,
       "content": {

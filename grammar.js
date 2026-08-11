@@ -76,12 +76,12 @@ export default grammar({
           choice(token.immediate("literal"), token.immediate("delta")),
           alias(/\d+/, $.size),
           NEWLINE,
-          $.data,
+          $.payload,
           prec.right(repeat(NEWLINE))
         )
       ),
 
-    data: ($) => prec.right(repeat1(iseq(BASE85, NEWLINE))),
+    payload: ($) => prec.right(repeat1(iseq(BASE85, NEWLINE))),
 
     hunks: ($) => prec.right(repeat1($.hunk)),
 

@@ -28,7 +28,7 @@
       "required": true,
       "types": [
         {
-          "type": "data",
+          "type": "payload",
           "named": true
         },
         {
@@ -185,11 +185,6 @@
     "fields": {}
   },
   {
-    "type": "data",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "deletion",
     "named": true,
     "fields": {}
@@ -342,6 +337,11 @@
         }
       ]
     }
+  },
+  {
+    "type": "payload",
+    "named": true,
+    "fields": {}
   },
   {
     "type": "similarity",
