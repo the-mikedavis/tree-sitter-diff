@@ -76,10 +76,8 @@
   ] @keyword
   (size) @number)
 
-(binary_patch
-  forward: (binary_hunk
-    (payload) @diff.plus))
+forward: (binary_hunk
+  (payload) @diff.plus)
 
-(binary_patch
-  reverse: (binary_hunk
-    (payload) @diff.minus))
+reverse: (binary_hunk
+  (payload) @diff.minus)
