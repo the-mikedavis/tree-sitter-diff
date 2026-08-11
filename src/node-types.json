@@ -339,11 +339,6 @@
     }
   },
   {
-    "type": "payload",
-    "named": true,
-    "fields": {}
-  },
-  {
     "type": "similarity",
     "named": true,
     "fields": {},
@@ -594,6 +589,10 @@
   {
     "type": "patch",
     "named": false
+  },
+  {
+    "type": "payload",
+    "named": true
   },
   {
     "type": "rename",

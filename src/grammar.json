@@ -313,6 +313,10 @@
             "name": "payload"
           },
           {
+            "type": "PATTERN",
+            "value": "\\r?\\n"
+          },
+          {
             "type": "PREC_RIGHT",
             "value": 0,
             "content": {
@@ -327,26 +331,10 @@
       }
     },
     "payload": {
-      "type": "PREC_RIGHT",
-      "value": 0,
+      "type": "IMMEDIATE_TOKEN",
       "content": {
-        "type": "REPEAT1",
-        "content": {
-          "type": "SEQ",
-          "members": [
-            {
-              "type": "IMMEDIATE_TOKEN",
-              "content": {
-                "type": "PATTERN",
-                "value": "[A-Za-z][0-9A-Za-z!#$%&()*+\\-;<=>?@^_`{|}~]+"
-              }
-            },
-            {
-              "type": "PATTERN",
-              "value": "\\r?\\n"
-            }
-          ]
-        }
+        "type": "PATTERN",
+        "value": "[A-Za-z][0-9A-Za-z!#$%&()*+\\-;<=>?@^_`{|}~]+(?:\\r?\\n[A-Za-z][0-9A-Za-z!#$%&()*+\\-;<=>?@^_`{|}~]+)*"
       }
     },
     "hunks": {

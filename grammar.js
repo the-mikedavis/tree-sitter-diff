@@ -1,7 +1,10 @@
 const NEWLINE = /\r?\n/;
 const WHITE_SPACE = /[\t\f\v ]+/;
 const ANYTHING = /[^\r\n]+/;
-const BASE85 = /[A-Za-z][0-9A-Za-z!#$%&()*+\-;<=>?@^_`{|}~]+/;
+const BASE85_LINE = /[A-Za-z][0-9A-Za-z!#$%&()*+\-;<=>?@^_`{|}~]+/;
+const BASE85 = new RegExp(
+  `${BASE85_LINE.source}(?:${NEWLINE.source}${BASE85_LINE.source})*`
+);
 
 export default grammar({
   name: "diff",
@@ -77,11 +80,12 @@ export default grammar({
           alias(/\d+/, $.size),
           NEWLINE,
           $.payload,
+          NEWLINE,
           prec.right(repeat(NEWLINE))
         )
       ),
 
-    payload: ($) => prec.right(repeat1(iseq(BASE85, NEWLINE))),
+    payload: ($) => token.immediate(BASE85),
 
     hunks: ($) => prec.right(repeat1($.hunk)),
 
