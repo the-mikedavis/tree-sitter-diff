@@ -81,7 +81,7 @@ export default grammar({
         )
       ),
 
-    data: ($) => prec.right(repeat1(seq(BASE85, NEWLINE))),
+    data: ($) => prec.right(repeat1(iseq(BASE85, NEWLINE))),
 
     hunks: ($) => prec.right(repeat1($.hunk)),
 

@@ -335,8 +335,11 @@
           "type": "SEQ",
           "members": [
             {
-              "type": "PATTERN",
-              "value": "[A-Za-z][0-9A-Za-z!#$%&()*+\\-;<=>?@^_`{|}~]+"
+              "type": "IMMEDIATE_TOKEN",
+              "content": {
+                "type": "PATTERN",
+                "value": "[A-Za-z][0-9A-Za-z!#$%&()*+\\-;<=>?@^_`{|}~]+"
+              }
             },
             {
               "type": "PATTERN",
