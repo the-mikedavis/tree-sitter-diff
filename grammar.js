@@ -73,7 +73,7 @@ export default grammar({
     binary_hunk: ($) =>
       prec.right(
         seq(
-          choice(iseq("literal"), iseq("delta")),
+          choice(token.immediate("literal"), token.immediate("delta")),
           alias(/\d+/, $.size),
           NEWLINE,
           $.data,
