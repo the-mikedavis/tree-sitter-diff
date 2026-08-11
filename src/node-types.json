@@ -20,6 +20,51 @@
     }
   },
   {
+    "type": "binary_hunk",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "payload",
+          "named": true
+        },
+        {
+          "type": "size",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "binary_patch",
+    "named": true,
+    "fields": {
+      "forward": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "binary_hunk",
+            "named": true
+          }
+        ]
+      },
+      "reverse": {
+        "multiple": false,
+        "required": false,
+        "types": [
+          {
+            "type": "binary_hunk",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "block",
     "named": true,
     "fields": {},
@@ -29,6 +74,10 @@
       "types": [
         {
           "type": "binary_change",
+          "named": true
+        },
+        {
+          "type": "binary_patch",
           "named": true
         },
         {
@@ -454,6 +503,10 @@
     "named": false
   },
   {
+    "type": "GIT",
+    "named": false
+  },
+  {
     "type": "\\",
     "named": false
   },
@@ -466,6 +519,10 @@
     "named": true
   },
   {
+    "type": "binary",
+    "named": false
+  },
+  {
     "type": "commit",
     "named": true
   },
@@ -475,6 +532,10 @@
   },
   {
     "type": "deleted",
+    "named": false
+  },
+  {
+    "type": "delta",
     "named": false
   },
   {
@@ -510,6 +571,10 @@
     "named": true
   },
   {
+    "type": "literal",
+    "named": false
+  },
+  {
     "type": "mode",
     "named": false
   },
@@ -522,6 +587,14 @@
     "named": false
   },
   {
+    "type": "patch",
+    "named": false
+  },
+  {
+    "type": "payload",
+    "named": true
+  },
+  {
     "type": "rename",
     "named": false
   },
@@ -532,6 +605,10 @@
   {
     "type": "similarity",
     "named": false
+  },
+  {
+    "type": "size",
+    "named": true
   },
   {
     "type": "to",

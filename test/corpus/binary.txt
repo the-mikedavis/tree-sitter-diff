@@ -43,3 +43,190 @@ Binary files a/docs/playground.png and /dev/null differ
     (binary_change
       (filename)
       (filename))))
+
+================================================================================
+Literal binary patch
+================================================================================
+diff --git a/bin.dat b/bin.dat
+index d24dc6832d641b8bcae6c7bd4aaaf0fd11eb26ab..c93bd035c4823c2d202965b8c5a1addfd66ac157 100644
+GIT binary patch
+literal 13
+UcmZQzWMX#qaP)I`bzztZ01RIOiU0rr
+
+literal 11
+ScmZQzWMX#m^m7b~WB>pM^#RNP
+
+--------------------------------------------------------------------------------
+
+(source
+  (block
+    (command
+      (argument)
+      (filename))
+    (index
+      (commit)
+      (commit)
+      (mode))
+    (binary_patch
+      (binary_hunk
+        (size)
+        (payload))
+      (binary_hunk
+        (size)
+        (payload)))))
+
+================================================================================
+Delta binary patch
+================================================================================
+diff --git a/big.bin b/big.bin
+index f841c67469be2f51b2d2006b8637bfb78d44d349..0b19a3fc9e7eeafc110d35e0d9d7ebbc8f69cdd0 100644
+GIT binary patch
+delta 28
+kcmX>wi|4>Bo((UU8QYs*GPl2EW^8}S%(VR_Gjlj60Jh-^P5=M^
+
+delta 28
+kcmX>wi|4>Bo((UU8QYp)GPl2EW^8}S%(VR_Gjlj60JhHyO#lD@
+
+--------------------------------------------------------------------------------
+
+(source
+  (block
+    (command
+      (argument)
+      (filename))
+    (index
+      (commit)
+      (commit)
+      (mode))
+    (binary_patch
+      (binary_hunk
+        (size)
+        (payload))
+      (binary_hunk
+        (size)
+        (payload)))))
+
+================================================================================
+New binary file with binary patch
+================================================================================
+diff --git a/new.bin b/new.bin
+new file mode 100644
+index 0000000000000000000000000000000000000000..d99a8afe0e58a9f6817140073275e50b77e43af6
+GIT binary patch
+literal 8
+Pcmcb&cHesjKi6;o7M%nm
+
+literal 0
+HcmV?d00001
+
+--------------------------------------------------------------------------------
+
+(source
+  (block
+    (command
+      (argument)
+      (filename))
+    (file_change
+      (mode))
+    (index
+      (commit)
+      (commit))
+    (binary_patch
+      (binary_hunk
+        (size)
+        (payload))
+      (binary_hunk
+        (size)
+        (payload)))))
+
+================================================================================
+Deleted binary file with binary patch
+================================================================================
+diff --git a/bin.dat b/bin.dat
+deleted file mode 100644
+index d24dc6832d641b8bcae6c7bd4aaaf0fd11eb26ab..0000000000000000000000000000000000000000
+GIT binary patch
+literal 0
+HcmV?d00001
+
+literal 11
+ScmZQzWMX#m^m7b~WB>pM^#RNP
+
+--------------------------------------------------------------------------------
+
+(source
+  (block
+    (command
+      (argument)
+      (filename))
+    (file_change
+      (mode))
+    (index
+      (commit)
+      (commit))
+    (binary_patch
+      (binary_hunk
+        (size)
+        (payload))
+      (binary_hunk
+        (size)
+        (payload)))))
+
+================================================================================
+Binary patch followed by a text diff
+================================================================================
+diff --git a/bin.dat b/bin.dat
+index d24dc6832d641b8bcae6c7bd4aaaf0fd11eb26ab..d0bcfe0b827560036eb120c0bd2f25f0755b5293 100644
+GIT binary patch
+literal 6
+NcmZSh&+tDg3IGWV0<!=B
+
+literal 11
+ScmZQzWMX#m^m7b~WB>pM^#RNP
+
+diff --git a/text.txt b/text.txt
+index ce01362..94954ab 100644
+--- a/text.txt
++++ b/text.txt
+@@ -1 +1,2 @@
+ hello
++world
+
+--------------------------------------------------------------------------------
+
+(source
+  (block
+    (command
+      (argument)
+      (filename))
+    (index
+      (commit)
+      (commit)
+      (mode))
+    (binary_patch
+      (binary_hunk
+        (size)
+        (payload))
+      (binary_hunk
+        (size)
+        (payload))))
+  (block
+    (command
+      (argument)
+      (filename))
+    (index
+      (commit)
+      (commit)
+      (mode))
+    (old_file
+      (filename))
+    (new_file
+      (filename))
+    (hunks
+      (hunk
+        (location
+          (linerange)
+          (linerange))
+        (changes
+          (context)
+          (addition))))))

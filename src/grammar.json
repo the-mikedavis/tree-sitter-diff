@@ -172,27 +172,36 @@
             "type": "CHOICE",
             "members": [
               {
-                "type": "SEQ",
+                "type": "CHOICE",
                 "members": [
                   {
+                    "type": "SEQ",
+                    "members": [
+                      {
+                        "type": "SYMBOL",
+                        "name": "old_file"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "\\r?\\n"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "new_file"
+                      },
+                      {
+                        "type": "PATTERN",
+                        "value": "\\r?\\n"
+                      },
+                      {
+                        "type": "SYMBOL",
+                        "name": "hunks"
+                      }
+                    ]
+                  },
+                  {
                     "type": "SYMBOL",
-                    "name": "old_file"
-                  },
-                  {
-                    "type": "PATTERN",
-                    "value": "\\r?\\n"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "new_file"
-                  },
-                  {
-                    "type": "PATTERN",
-                    "value": "\\r?\\n"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "hunks"
+                    "name": "binary_patch"
                   }
                 ]
               },
@@ -202,6 +211,130 @@
             ]
           }
         ]
+      }
+    },
+    "binary_patch": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "IMMEDIATE_TOKEN",
+                "content": {
+                  "type": "STRING",
+                  "value": "GIT"
+                }
+              },
+              {
+                "type": "STRING",
+                "value": "binary"
+              },
+              {
+                "type": "STRING",
+                "value": "patch"
+              }
+            ]
+          },
+          {
+            "type": "PATTERN",
+            "value": "\\r?\\n"
+          },
+          {
+            "type": "FIELD",
+            "name": "forward",
+            "content": {
+              "type": "SYMBOL",
+              "name": "binary_hunk"
+            }
+          },
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "FIELD",
+                "name": "reverse",
+                "content": {
+                  "type": "SYMBOL",
+                  "name": "binary_hunk"
+                }
+              },
+              {
+                "type": "BLANK"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "binary_hunk": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "IMMEDIATE_TOKEN",
+                "content": {
+                  "type": "STRING",
+                  "value": "literal"
+                }
+              },
+              {
+                "type": "IMMEDIATE_TOKEN",
+                "content": {
+                  "type": "STRING",
+                  "value": "delta"
+                }
+              }
+            ]
+          },
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "PATTERN",
+              "value": "\\d+"
+            },
+            "named": true,
+            "value": "size"
+          },
+          {
+            "type": "PATTERN",
+            "value": "\\r?\\n"
+          },
+          {
+            "type": "SYMBOL",
+            "name": "payload"
+          },
+          {
+            "type": "PATTERN",
+            "value": "\\r?\\n"
+          },
+          {
+            "type": "PREC_RIGHT",
+            "value": 0,
+            "content": {
+              "type": "REPEAT",
+              "content": {
+                "type": "PATTERN",
+                "value": "\\r?\\n"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "payload": {
+      "type": "IMMEDIATE_TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[A-Za-z][0-9A-Za-z!#$%&()*+\\-;<=>?@^_`{|}~]+(?:\\r?\\n[A-Za-z][0-9A-Za-z!#$%&()*+\\-;<=>?@^_`{|}~]+)*"
       }
     },
     "hunks": {
