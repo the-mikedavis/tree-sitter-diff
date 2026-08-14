@@ -14,7 +14,9 @@
           (change)
           (unrecognized)
         ]+)))
-  (#offset! @injection.content 0 1 0 1))
+  (#offset! @injection.content 0 1 0 1)
+  (#gsub! @injection.filename "\t.*$" "")
+  (#gsub! @injection.filename "^\"(.+)\"$" "%1"))
 
 ; deletions
 (block
@@ -31,4 +33,6 @@
           (change)
           (unrecognized)
         ]+)))
-  (#offset! @injection.content 0 1 0 1))
+  (#offset! @injection.content 0 1 0 1)
+  (#gsub! @injection.filename "\t.*$" "")
+  (#gsub! @injection.filename "^\"(.+)\"$" "%1"))
